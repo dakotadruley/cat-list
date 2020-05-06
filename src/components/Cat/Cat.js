@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Cat = ({ url }) => (
   <section>
-    <a href={url}>Cat</a>
+    <img src={url} />
   </section>
 );
 
