@@ -23,7 +23,7 @@ const Header = () => {
 
 Header.propTypes = {
   toggle: PropTypes.func.isRequired,
-  value: PropTypes.bool.isRequired
+  // value: PropTypes.bool.isRequired
 };
 
 export default Header; 
