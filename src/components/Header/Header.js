@@ -1,18 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Header.css';
+import { useTheme, useToggle } from '../../hooks/ThemeProvider';
 
-const Header = ({ toggle, value }) => (
-  <>
-    <section>
-      <h1>Cats for Dayzz</h1>
-    </section>
-    <aside className={styles.Header}>
-      <input id="toggle" type="checkbox" checked={value} onChange={toggle} />
-      <label htmlFor="toggle"></label>
-    </aside>
-  </>
-);
+const Header = () => {
+  const toggle = useToggle();
+  const theme = useTheme();
+
+  return (
+    <>
+      <section>
+        <h1>Cats for Dayzz</h1>
+      </section>
+      <aside className={styles.Header}>
+        <input id="toggle" type="checkbox" checked={theme === 'dark'} onChange={toggle} />
+        <label htmlFor="toggle"></label>
+      </aside>
+    </>
+  
+  );
+};
 
 Header.propTypes = {
   toggle: PropTypes.func.isRequired,

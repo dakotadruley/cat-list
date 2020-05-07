@@ -7,8 +7,8 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
   
   const toggle = ({ target }) => {
-    if(target.checked) setTheme('light');
-    if(!target.checked) setTheme('dark');
+    if(target.checked) setTheme('dark');
+    if(!target.checked) setTheme('light');
   };
 
   return (
@@ -22,13 +22,13 @@ ThemeProvider.propTypes = {
   children: PropTypes.node
 };
 
-export const useLight = () => {
-  const { light } = useContext(ThemeContext);
-  return light;
+export const useTheme = () => {
+  const { theme } = useContext(ThemeContext);
+  return theme;
 };
 
-export const useDark = () => {
-  const { dark } = useContext(ThemeContext);
-  return dark;
+export const useToggle = () => {
+  const { toggle } = useContext(ThemeContext);
+  return toggle;
 };
 
