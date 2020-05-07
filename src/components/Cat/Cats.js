@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Cat from './Cat.js';
 
 const Cats = ({ cats }) => {
-  console.log(cats);
   const catElements = cats.map(cat => (
     <>
       <li key={`${Math.random(1000)} + ${cat}`}>
